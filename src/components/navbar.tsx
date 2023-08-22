@@ -3,12 +3,15 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { classNames } from '@/utils/helperfunctions'
+import { classNames, navLinks } from '@/utils/helperfunctions'
 
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const NavBar = () => {
+    const router = useRouter();
   return (
-    <Disclosure as="nav" className="bg-white shadow w-2/3">
+    <Disclosure as="nav" className="bg-white shadow w-full  sm:w-2/3 absolute">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -35,30 +38,19 @@ const NavBar = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <a
-                    href="/"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="/about-us"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="/services"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Services
-                  </a>
-                  <a
-                    href="/contact-us"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Contact Us
-                  </a>
+                  {navLinks.map((navLink) => (
+                    <Link
+                      href={navLink.href}
+                      className={`inline-flex items-center border-b-2 px-5 pt-1 text-sm font-medium ${
+                        router.pathname === navLink.href
+                          ? 'border-orange-500 bg-orange-50 text-primary'
+                          : 'border-transparent text-gray-900 hover:border-orange-200 hover:text-gray-700'
+                      }`}
+                    >
+                      {navLink.name}
+                    </Link>
+                  ))}
+              
                 </div>
               </div>
             </div>
@@ -67,34 +59,20 @@ const NavBar = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              <Disclosure.Button
-                as="a"
-                href="/"
-                className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
-              >
-                Home
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/about-us"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                About Us
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/services"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Services
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/about-us"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                About Us
-              </Disclosure.Button>
+              {navLinks.map((navLink) => (
+                <Disclosure.Button
+                  as="a"
+                  href={navLink.href}
+                  key={navLink.name}
+                  className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                    router.pathname === navLink.href
+                      ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } px-1 pt-1 text-sm font-medium`}
+                >
+                  {navLink.name}
+                </Disclosure.Button>
+              ))}
             </div>
           </Disclosure.Panel>
         </>
