@@ -5,12 +5,20 @@ import Layout from '@/components/layout';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLightbulb,
+  faChartLine,
+  faHandsHelping,
+  faHandshake,
+  faHeadset,
+} from '@fortawesome/free-solid-svg-icons';
+
 
 
 export default function About() {
   return (
     <Layout>
-      <section className="text-primary bg-white md:flex md:gap-x-10 justify-center items-center">
+      <section className="text-primary bg-white flex flex-col-reverse md:flex-row md:gap-x-10 justify-center items-center">
         <div className="md:w-2/5">
           <Image
             src="/builder-batter-left.jpg"
@@ -21,10 +29,10 @@ export default function About() {
           />
         </div>
         <div className="md:w-3/5">
-          <h3 className="text-3xl font-bold text-accent">
+          <h3 className="text-xl md:text-3xl font-bold text-accent">
             Ultra Superiour Quality
           </h3>
-          <h2 className="text-6xl font-extrabold text-primary">
+          <h2 className="text-2xl md:text-6xl font-extrabold text-primary">
             Designed for Modern Vehicles
           </h2>
           <p className="text-base mb-3">
@@ -52,7 +60,7 @@ export default function About() {
         </div>
       </section>
       <section className="text-primary flex flex-col justify-center items-center">
-        <h2 className="text-4xl text-primary font-extrabold md:w-[60vw] text-center mb-10">
+        <h2 className="text-2xl md:text-4xl text-primary font-extrabold md:w-[60vw] text-center mb-10">
           Why Choose{' '}
           <span className="text-accent">EXxYA Synthetic Engine Oil?</span>
         </h2>
@@ -61,7 +69,7 @@ export default function About() {
 
       <section className="bg-accent md:flex justify-center py-16">
         <div className="md:w-1/2 text-center md:text-left px-4">
-          <h2 className="text-4xl text-white font-extrabold mb-6">
+          <h2 className="text-2xl md:text-4xl text-white font-extrabold mb-6">
             Our Vision
           </h2>
           <p className="text-white">
@@ -70,7 +78,7 @@ export default function About() {
           </p>
         </div>
         <div className="md:w-1/2 text-center md:text-left px-4 mt-8 md:mt-0">
-          <h2 className="text-4xl text-white font-extrabold mb-6">
+          <h2 className="text-2xl md:text-4xl text-white font-extrabold mb-6">
             Our Mission
           </h2>
           <ul className="list-disc list-inside text-white">
@@ -100,7 +108,7 @@ export default function About() {
       <section className="zero-margin flex flex-col-reverse sm:flex-row justify-center">
         <div className="md:w-1/2 bg-primary"> </div>
         <div className="md:w-1/2 p-20">
-          <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
+          <h2 className="text-2xl md:text-4xl text-primary font-extrabold text-center mb-10">
             Values & <span className="text-accent">Philosophy</span>
           </h2>
           <p className="text-black">
@@ -120,34 +128,64 @@ export default function About() {
       </section>
       <section className="zero-margin bg-white flex justify-center">
         <div className="md:w-1/2 p-20">
-          <h2 className="text-4xl text-primary font-extrabold mb-10">
+          <h2 className="text-2xl md:text-4xl text-primary font-extrabold mb-10">
             Company Philosophy
             <span className="text-accent"> & Strengths</span>
           </h2>
-          <ul className="text-black font-semibold">
-            <li>
-              Innovation - Always on the lookout for emerging technologies and
-              new materials to stay ahead.
+          <ul className="text-black font-semibold flex flex-col gap-y-10">
+            <li className="flex items-start space-x-4">
+              <FontAwesomeIcon
+                icon={faLightbulb}
+                className="text-accent text-2xl mt-1"
+              />
+              <span>
+                Innovation - Always on the lookout for emerging technologies and
+                new materials to stay ahead.
+              </span>
             </li>
-            <li>Continuous Improvement - Dedicated to R & D.</li>
-            <li>
-              Flexibility - Prompt & responsive in meeting customer needs.
+            <li className="flex items-start space-x-4">
+              <FontAwesomeIcon
+                icon={faChartLine}
+                className="text-accent text-2xl mt-1"
+              />
+              <span>Continuous Improvement - Dedicated to R &amp; D.</span>
             </li>
-            <li>
-              Form Alliance with Customers - Understand and work with customers
-              to provide customised services.
+            <li className="flex items-start space-x-4">
+              <FontAwesomeIcon
+                icon={faHandsHelping}
+                className="text-accent text-2xl mt-1"
+              />
+              <span>
+                Flexibility - Prompt &amp; responsive in meeting customer needs.
+              </span>
             </li>
-            <li>
-              Total Customer Support - Experience team of professionals offering
-              product selection, product knowledge, training and logistics
-              support.
+            <li className="flex items-start space-x-4">
+              <FontAwesomeIcon
+                icon={faHandshake}
+                className="text-accent text-2xl mt-1"
+              />
+              <span>
+                Form Alliance with Customers - Understand and work with
+                customers to provide customised services.
+              </span>
+            </li>
+            <li className="flex items-start space-x-4">
+              <FontAwesomeIcon
+                icon={faHeadset}
+                className="text-accent text-2xl mt-1"
+              />
+              <span>
+                Total Customer Support - Experienced team of professionals
+                offering product selection, product knowledge, training, and
+                logistics support.
+              </span>
             </li>
           </ul>
         </div>
         <div className="md:w-1/2 bg-accent"></div>
       </section>
       <section className="text-primary flex flex-col justify-center items-center">
-        <h2 className="text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-10">
+        <h2 className="text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-10">
           Our <span className="text-accent">Products</span>
         </h2>
         <ExxyaProduct />

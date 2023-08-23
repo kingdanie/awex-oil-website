@@ -12,7 +12,7 @@ const Hero = ({title}: {title: string}) => {
   
   return (
     <div
-      className="w-full"
+      className="w-full text-white"
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -25,7 +25,7 @@ const Hero = ({title}: {title: string}) => {
       }}
     >
       <h1
-        className="text-bold text-6xl"
+        className="text-bold text-4xl md:text-6xl"
         style={{ padding: '5rem', background: '#000000b0' }}
         onClick={() => console.log(router.pathname)}
       >
