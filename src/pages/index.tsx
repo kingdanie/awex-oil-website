@@ -4,7 +4,7 @@ import Layout from "@/components/layout"
 export default function Home() {
   return (
     <Layout>
-      <div className="text-primary">This is the home page</div>
+      <section className="text-primary"><h2 className="text-4xl">Home page coming soon </h2></section>
     </Layout>
   )
 }
