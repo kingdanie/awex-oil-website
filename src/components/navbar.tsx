@@ -11,10 +11,10 @@ import Link from 'next/link';
 const NavBar = () => {
     const router = useRouter();
   return (
-    <Disclosure as="nav" className="bg-white shadow w-full  sm:w-2/3 absolute">
+    <Disclosure as="nav" className="nav-bar shadow w-full  sm:w-2/3 absolute">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 sm:px-0">
             <div className="relative flex h-16 justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -29,28 +29,31 @@ const NavBar = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex flex-shrink-0 items-center px-5">
                   <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Awe Oil Limited"
                   />
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden sm:ml-6 sm:flex">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  {navLinks.map((navLink) => (
+                  {navLinks.map((navLink, index) => (
                     <Link
                       href={navLink.href}
                       className={`inline-flex items-center border-b-2 px-5 pt-1 text-sm font-medium ${
                         router.pathname === navLink.href
                           ? 'border-orange-500 bg-orange-50 text-primary'
                           : 'border-transparent text-gray-900 hover:border-orange-200 hover:text-gray-700'
+                      } ${
+                        index === navLinks.length - 1
+                          ? 'bg-accent text-white'
+                          : ''
                       }`}
                     >
                       {navLink.name}
                     </Link>
                   ))}
-              
                 </div>
               </div>
             </div>
@@ -59,7 +62,7 @@ const NavBar = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              {navLinks.map((navLink) => (
+              {navLinks.map((navLink, index) => (
                 <Disclosure.Button
                   as="a"
                   href={navLink.href}
@@ -68,6 +71,8 @@ const NavBar = () => {
                     router.pathname === navLink.href
                       ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
                       : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } ${
+                    index === navLinks.length - 1 ? 'bg-accent text-white' : ''
                   } px-1 pt-1 text-sm font-medium`}
                 >
                   {navLink.name}
