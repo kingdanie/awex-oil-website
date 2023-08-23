@@ -3,6 +3,9 @@ import ExxyaProduct from '@/components/ExxyaPoducts';
 import WhyExxya from '@/components/WhyExxya';
 import Layout from '@/components/layout';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function About() {
   return (
@@ -56,32 +59,39 @@ export default function About() {
         <WhyExxya />
       </section>
 
-      <section className="bg-accent md:flex justify-center">
-        <div>
-          <h2 className="text-4xl text-white font-extrabold mb-10">
+      <section className="bg-accent md:flex justify-center py-16">
+        <div className="md:w-1/2 text-center md:text-left px-4">
+          <h2 className="text-4xl text-white font-extrabold mb-6">
             Our Vision
           </h2>
-          <p>
+          <p className="text-white">
             An international lubricant brand with a reputation for Performance,
             Value and Reliability
           </p>
         </div>
-        <div>
-          <h2 className="text-4xl text-white font-extrabold mb-10">
+        <div className="md:w-1/2 text-center md:text-left px-4 mt-8 md:mt-0">
+          <h2 className="text-4xl text-white font-extrabold mb-6">
             Our Mission
           </h2>
-          <ul>
-            <li>
-              <span className="text-primary">Our Products:</span> To provide
-              high performance, value-for-money and reliable products
+          <ul className="list-disc list-inside text-white">
+            <li className="flex items-start mb-4">
+              <span className="text-white font-semibold mr-2">
+                <FontAwesomeIcon icon={faCheckCircle} />
+              </span>
+              To provide high performance, value-for-money and reliable products
             </li>
-            <li>
-              <span className="text-primary">Our Services:</span> To customise
-              services to meet customers' needs
+            <li className="flex items-start mb-4">
+              <span className="text-white font-semibold mr-2">
+                <FontAwesomeIcon icon={faCheckCircle} />
+              </span>
+              To customise services to meet customers' needs
             </li>
-            <li>
-              <span className="text-primary">Our People:</span> To lead the
-              organisation with a competent and responsive management team
+            <li className="flex items-start">
+              <span className="text-white font-semibold mr-2">
+                <FontAwesomeIcon icon={faCheckCircle} />
+              </span>
+              To lead the organisation with a competent and responsive
+              management team
             </li>
           </ul>
         </div>
@@ -108,7 +118,6 @@ export default function About() {
           </p>
         </div>
       </section>
-
       <section className="zero-margin bg-white flex justify-center">
         <div className="md:w-1/2 p-20">
           <h2 className="text-4xl text-primary font-extrabold mb-10">
