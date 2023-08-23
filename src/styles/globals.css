@@ -17,11 +17,22 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: black;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.nav-bar {
+  background-color: #e5e7eb;
+}
+
+section {
+  padding: 5rem;
+}
+.zero-margin {
+  padding: 0;
 }
