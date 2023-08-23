@@ -3,9 +3,9 @@ import Header from "./header";
 
 const Layout = ({children} : {children: any}) => {
     return (
-      <main className="min-h-screen bg-awex-grey flex flex-col justify-between items-center">
+      <main className="min-h-screen bg-gray-200 flex flex-col justify-between items-center max-w-full">
         <Header />
-        <div>{children}</div>
+        <div className="min-h-[40vh]">{children}</div>
         <Footer />
       </main>
     );
