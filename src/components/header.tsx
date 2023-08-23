@@ -1,10 +1,12 @@
+import Hero from './Hero';
 import NavBar from './navbar';
 
 const Header = () => {
   return (
-    <div className="w-full flex flex-col items-center bg-primary relative">
+    <div className="w-full flex flex-col items-center bg-primary relative min-h-[80]">
       <NavBar />
-      <h3>Header</h3>
+      <Hero title={"Header"} />
+      {/* <h3>Header</h3> */}
     </div>
   );
 };
