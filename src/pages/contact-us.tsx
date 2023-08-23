@@ -1,5 +1,6 @@
 import Layout from '@/components/layout';
 import { useState } from 'react';
+import axios from 'axios';
 
 const inputStyles = {
   borderColor: '#504a4861',
@@ -26,7 +27,7 @@ export default function ContactUs() {
   const [msg, setMsg] = useState('');
   const [agree, setAgree] = useState(true);
   // const disAbleSubmit = true;
-  const handleSubmit = ($event: React.FormEvent) => {
+  const handleSubmit = async ($event: React.FormEvent) => {
     $event.preventDefault();
     if (name == '' || null) {
       return;
@@ -35,12 +36,18 @@ export default function ContactUs() {
       //  const disAbledSubmit = false;
     }
 
-    alert(`${name} ${email} ${msg}`);
-    console.log(name + 'here');
-    setName('');
-    setEmail('');
-    setMsg('');
-    setAgree(false);
+    try {
+      await axios.post('/api/send-email', { name, email, msg });
+    } catch (error) {
+      console.error(error);
+      alert(`An error occurred. Please try again. ${error}`);
+    } finally {
+     // alert(`${name} ${email} ${msg}`);
+      setName('');
+      setEmail('');
+      setMsg('');
+      setAgree(false);
+    }
   };
 
   return (
