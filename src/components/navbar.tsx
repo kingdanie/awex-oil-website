@@ -31,8 +31,8 @@ const NavBar = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0 items-center px-5">
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    className="h-12 w-auto"
+                    src="/awe-x-logo.png"
                     alt="Awe Oil Limited"
                   />
                 </div>
