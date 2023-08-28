@@ -31,8 +31,44 @@ body {
 }
 
 section {
-  padding: 3rem;
+  padding: 120px 3rem;
 }
 .zero-margin {
   padding: 0;
+}
+
+ .exxyaProductStyles::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background: linear-gradient(transparent, #aa3219);
+  };
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.max-width {
+  max-width: 900px;
+}
+
+
+
+.section-img {
+  background-image : url('./../../public/section-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
