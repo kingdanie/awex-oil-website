@@ -3,7 +3,7 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { classNames, navLinks } from '@/utils/helperfunctions'
+import { classNames, navLinks } from '@/utils/helperfunctions';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 const NavBar = () => {
     const router = useRouter();
   return (
-    <Disclosure as="nav" className="nav-bar shadow w-full  sm:w-2/3 absolute">
+    <Disclosure as="nav" className="nav-bar shadow w-full  mx-auto md:w-[90vw] absolute">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-0">
@@ -30,18 +30,21 @@ const NavBar = () => {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0 items-center px-5">
+                  <Link href="/">
+
                   <img
                     className="h-12 w-auto"
                     src="/awe-x-logo.png"
                     alt="Awe Oil Limited"
                   />
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   {navLinks.map((navLink, index) => (
                     <Link
                       href={navLink.href}
-                      className={`inline-flex items-center border-b-2 px-5 pt-1 text-sm font-medium ${
+                      className={`inline-flex items-center uppercase border-b-2 px-5 pt-1 text-sm font-bold ${
                         router.pathname === navLink.href
                           ? 'border-orange-500 bg-orange-50 text-primary'
                           : 'border-transparent text-gray-900 hover:border-orange-200 hover:text-gray-700'
