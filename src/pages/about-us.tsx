@@ -12,60 +12,17 @@ import {
   faHandshake,
   faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
-
-
+import SectionWithRightImg from '@/components/SectionWithRightImg';
+import AwexContent from '../../data';
+import { url } from 'inspector';
+import ContainSection from '@/components/containedSection';
 
 export default function About() {
   return (
     <Layout>
-      <section className="text-primary bg-white flex flex-col-reverse md:flex-row md:gap-x-10 justify-center items-center">
-        <div className="md:w-2/5">
-          <Image
-            src="/builder-batter-left.jpg"
-            alt="exxya engine oil"
-            width={500}
-            height={500}
-            sizes="(max-width: 768px) 100vw"
-          />
-        </div>
-        <div className="md:w-3/5">
-          <h3 className="text-xl md:text-3xl font-bold text-accent">
-            Ultra Superiour Quality
-          </h3>
-          <h2 className="text-2xl md:text-6xl font-extrabold text-primary">
-            Designed for Modern Vehicles
-          </h2>
-          <p className="text-base mb-3">
-            EXXYA 5W 30 Fully Synthetic Engine Oil is a premium Engine Oil that
-            offers superior quality and specifically designed for modern cars
-            running on petrol or Diesel. This makes it suitable for a broad
-            range of temperatures, and one of the most commonly used oil in the
-            Nigeria market.
-          </p>
-
-          <p className="text-base mb-3">
-            EXXYA Oil has been formulated to clean away old sludge while
-            preventing new sludge formation. No oil keeps engines cleaner then
-            EXXYA 5W 30 Fully Synthetic Engine Oil, it outperforms conventional
-            motor oil, reduces friction and wear at start-up and protects your
-            engine against performance robbing sludge and varnish deposits and
-            help improve fuel economy.
-          </p>
-
-          <p className="text-base mb-3">
-            Our products are manufactured from finest API stocks and state of
-            the art additive technology to meet the most stringent requirements
-            of APN SN, ACEA A5/B5 thus making it suitable for contemporary cars.
-          </p>
-        </div>
-      </section>
-      <section className="text-primary flex flex-col justify-center items-center">
-        <h2 className="text-2xl md:text-4xl text-primary font-extrabold md:w-[60vw] text-center mb-10">
-          Why Choose{' '}
-          <span className="text-accent">EXxYA Synthetic Engine Oil?</span>
-        </h2>
-        <WhyExxya />
-      </section>
+      <SectionWithRightImg
+        data={AwexContent.About.Introduction}
+      ></SectionWithRightImg>
 
       <section className="bg-accent md:flex justify-center py-16">
         <div className="md:w-1/2 text-center md:text-left px-4">
@@ -106,7 +63,16 @@ export default function About() {
       </section>
 
       <section className="zero-margin flex flex-col-reverse sm:flex-row justify-center">
-        <div className="md:w-1/2 bg-primary"> </div>
+        <div
+          className="md:w-1/2 bg-primary"
+          style={{
+            backgroundImage: "url('./awex-oil-cover.jpeg')",
+            backgroundSize: 'cover',
+            minHeight: '300px',
+          }}
+        >
+          {' '}
+        </div>
         <div className="md:w-1/2 p-20">
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold text-center mb-10">
             Values & <span className="text-accent">Philosophy</span>
@@ -126,7 +92,7 @@ export default function About() {
           </p>
         </div>
       </section>
-      <section className="zero-margin bg-white flex justify-center">
+      <section className="section-img zero-margin bg-white flex flex-col md:flex-row justify-center">
         <div className="md:w-1/2 p-20">
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold mb-10">
             Company Philosophy
@@ -182,7 +148,15 @@ export default function About() {
             </li>
           </ul>
         </div>
-        <div className="md:w-1/2 bg-accent"></div>
+        <div
+          className="md:w-1/2 bg-accent"
+          style={{
+            backgroundImage: "url('./12.jpeg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            minHeight: '300px',
+          }}
+        ></div>
       </section>
       <section className="text-primary flex flex-col justify-center items-center">
         <h2 className="text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-10">
@@ -190,6 +164,10 @@ export default function About() {
         </h2>
         <ExxyaProduct />
       </section>
+      <ContainSection alt="white" data={AwexContent.About.CustomSolutions} />
+      <ContainSection alt="accent" data={AwexContent.About.DealerOpportunities} />
+      <ContainSection data={AwexContent.About.OurMarketFocus} />
+      <ContainSection alt="white" data={AwexContent.About.MeetOurTeam} />
     </Layout>
   );
 }
