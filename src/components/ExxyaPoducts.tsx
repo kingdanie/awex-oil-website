@@ -1,8 +1,8 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-const exxyaOilImage = '/exxya-engine-oil.jpg'; // Replace with your image path
-const exxyaCoolantImage = '/exxya-coolant-image.jpg'; // Replace with your image path
-const exxyaGearOilImage = '/exxya-gear-oil-image.jpg'; // Replace with your image path
+import ExxyaProdImage from './ExxyaProdImage';
+import AwexContent from '../../data';
+
 
 const ProductCard = ({
   name,
@@ -24,32 +24,17 @@ const ProductCard = ({
 };
 
 const ExxyaProduct = () => {
-  const products = [
-    {
-      name: 'EXxYA synthetic Engine Oil',
-      image: exxyaOilImage,
-      alt: 'EXxYA synthetic Engine Oil',
-    },
-    {
-      name: 'EXxYA Coolant',
-      image: exxyaCoolantImage,
-      alt: 'EXxYA Coolant',
-    },
-    {
-      name: 'EXxYA Gear Oil',
-      image: exxyaGearOilImage,
-      alt: 'EXxYA Gear Oil',
-    },
-  ];
+ 
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-10">
-      {products.map((product, index) => (
-        <ProductCard
+      {AwexContent.products.map((product, index) => (
+        <ExxyaProdImage
           key={index}
           name={product.name}
           image={product.image}
           alt={product.alt}
+          url={product.url}
         />
       ))}
     </div>
