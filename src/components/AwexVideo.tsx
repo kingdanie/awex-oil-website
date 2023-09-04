@@ -1,42 +1,54 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 const AwexVideo = () => {
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handlePlayClick = () => {
-    setIsVideoVisible(true);
+  // Function to handle iframe load event
+  const handleIframeLoad = () => {
+    setIsLoading(false); // Set loading to false once the iframe has loaded
   };
 
   return (
-    <div className="relative">
-      <div
-        className={`h-64 bg-gray-300 cursor-pointer ${
-          isVideoVisible ? 'hidden' : ''
-        }`}
-        onClick={handlePlayClick}
-      >
-     <div className="absolute inset-0 flex items-center justify-center">
-          <FontAwesomeIcon
-            icon={faPlayCircle}
-            className="text-orange-500 h-16 w-16"
-          />
-      </div>
-      {isVideoVisible && (
-        <div className="h-64">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/QXgBI8drB-k?si=xPI2JGFaO1f0IM2N"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      )}
-    </div>
+    <div className="iframe-container mt-10">
+      {isLoading && <div className="loader">Loading...</div>}
+      <iframe
+        className={`w-full ${isLoading ? 'hidden' : ''}`}
+        src="https://www.youtube-nocookie.com/embed/KPNxYdUn_ro?si=DsBdvuaMVfAMMvJw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        onLoad={handleIframeLoad} // Call the function when the iframe loads
+      ></iframe>
+
+      <style jsx>{`
+        .iframe-container {
+          position: relative;
+          overflow: hidden;
+          padding-top: 56.25%; /* 16:9 aspect ratio (height: width) */
+        }
+
+        .iframe-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .loader {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.7);
+          z-index: 1;
+        }
+      `}</style>
     </div>
   );
 };
