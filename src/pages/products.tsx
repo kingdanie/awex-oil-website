@@ -1,10 +1,13 @@
 import ExxyaProduct from '@/components/ExxyaPoducts';
 import Layout from '@/components/layout';
+import Image from 'next/image';
+import EXxyaProdImage from '@/components/ExxyaProdImage';
+import AwexVideo from '@/components/AwexVideo';
 
 export default function Products() {
   return (
     <Layout>
-      <section className="text-center">
+      <section className="text-center max-w-[900px] mx-auto">
         <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
           EXxya 5W 30{' '}
           <span className="text-accent">Fully Synthetic Engine Oil</span>
@@ -29,25 +32,24 @@ export default function Products() {
           art additive technology to meet the most stringent requirements of APN
           SN, ACEA A5/B5 thus making it suitable for contemporary cars.
         </p>
-
+        <AwexVideo />
       </section>
       <section className="text-center bg-white">
         <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
           Product <span className="text-accent">Range</span>
         </h2>
-        <p className="text-black">
+        <p className="text-black max-w-[900px] mx-auto">
           AWE.X Industries lubricants product range is designed to meet
           requirements of various markets and applications, ranging from
-          Industrial, automotive , Construction and Marine.
+          Industrial, automotive, Construction, and Marine.
         </p>
-        <p className="text-black">
+        <p className="text-black max-w-[900px] mx-auto">
           We offer a dynamic range of engine oils, gear oils, brake fluids,
-          coolants and greases for motorbikes, cars, trucks and other heavy duty
-          vehicles. The product mix is constantly reviewed to ensure that the
-          specifications are of the latest standards.
+          coolants, and greases for motorbikes, cars, trucks, and other
+          heavy-duty vehicles. The product mix is constantly reviewed to ensure
+          that the specifications are of the latest standards.
         </p>
-
-        <div className="mt-20">
+        <div className="relative mt-10 max-w-[900px] mx-auto">
           <ExxyaProduct />
         </div>
       </section>
