@@ -1,15 +1,16 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
+import { slugToTitle } from './../utils/helperfunctions';
 
 const bgCover = 'awex-oil-cover.jpeg';
 const bgCover1 = 'awex-oil-2560.jpg';
 const bgCover2 = 'awex-oi1l.jpg';
 const bgCover3 = 'awex-oil1.png';
 
-const Hero = ({title}: {title: string}) => {
+const Hero = ({ title = '' }: { title?: string }) => {
+  const router = useRouter();
+  const PageTitle = router.pathname == '/' ? "Awe X Industries Limited" : router.pathname;
+  console.log(router.pathname);
 
-    const router = useRouter();
-    
-  
   return (
     <div
       className="w-full text-white"
@@ -29,11 +30,10 @@ const Hero = ({title}: {title: string}) => {
         style={{ padding: '5rem', background: '#000000b0' }}
         onClick={() => console.log(router.pathname)}
       >
-        {title.toUpperCase()} {router.pathname}
+        {title !== '' ? title : slugToTitle(PageTitle)}
       </h1>
     </div>
   );
-}
-
+};
 
 export default Hero;
