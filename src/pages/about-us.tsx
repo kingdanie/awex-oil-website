@@ -13,6 +13,7 @@ import {
   faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
 import SectionWithRightImg from '@/components/SectionWithRightImg';
+import SectionWithLeftImg from '@/components/SectionWithLeftImg';
 import AwexContent from '../../data';
 import { url } from 'inspector';
 import ContainSection from '@/components/containedSection';
@@ -23,6 +24,37 @@ export default function About() {
       <SectionWithRightImg
         data={AwexContent.About.Introduction}
       ></SectionWithRightImg>
+
+      <section className="zero-margin flex flex-col-reverse sm:flex-row justify-center">
+        <div
+          className="md:w-1/2 bg-primary"
+          style={{
+            backgroundImage: "url('./awex-oil-cover.jpeg')",
+            backgroundSize: 'cover',
+            minHeight: '300px',
+          }}
+        >
+          {' '}
+        </div>
+        <div className="md:w-1/2 p-20">
+          <h2 className="text-2xl md:text-4xl text-primary font-extrabold text-center mb-10">
+            Values & <span className="text-accent">Philosophy</span>
+          </h2>
+          <p className="text-black">
+            We believe in <span className="text-accent">Reliably</span>{' '}
+            providing our customers with{' '}
+            <span className="text-accent">good performance</span> products at a
+            price level considered as 'Value for Money' . with today's
+            technology developing rapidly requiring engineering performing
+            lubricants, WE are committed to meet industry demands with a range
+            of products that is technology led. Giving our customers{' '}
+            <span className="text-accent">'Value for Money'</span> continues to
+            be our company's core value. This enables our customers to be more
+            competitive using the full set of benefits from our competitively
+            priced products
+          </p>
+        </div>
+      </section>
 
       <section className="bg-accent md:flex justify-center py-16">
         <div className="md:w-1/2 text-center md:text-left px-4">
@@ -62,36 +94,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="zero-margin flex flex-col-reverse sm:flex-row justify-center">
-        <div
-          className="md:w-1/2 bg-primary"
-          style={{
-            backgroundImage: "url('./awex-oil-cover.jpeg')",
-            backgroundSize: 'cover',
-            minHeight: '300px',
-          }}
-        >
-          {' '}
-        </div>
-        <div className="md:w-1/2 p-20">
-          <h2 className="text-2xl md:text-4xl text-primary font-extrabold text-center mb-10">
-            Values & <span className="text-accent">Philosophy</span>
-          </h2>
-          <p className="text-black">
-            We believe in <span className="text-accent">Reliably</span>{' '}
-            providing our customers with{' '}
-            <span className="text-accent">good performance</span> products at a
-            price level considered as 'Value for Money' . with today's
-            technology developing rapidly requiring engineering performing
-            lubricants, WE are committed to meet industry demands with a range
-            of products that is technology led. Giving our customers{' '}
-            <span className="text-accent">'Value for Money'</span> continues to
-            be our company's core value. This enables our customers to be more
-            competitive using the full set of benefits from our competitively
-            priced products
-          </p>
-        </div>
-      </section>
       <section className="section-img zero-margin bg-white flex flex-col md:flex-row justify-center">
         <div className="md:w-1/2 p-20">
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold mb-10">
@@ -158,14 +160,22 @@ export default function About() {
           }}
         ></div>
       </section>
-      <section className="text-primary flex flex-col justify-center items-center">
-        <h2 className="text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-10">
-          Our <span className="text-accent">Products</span>
-        </h2>
-        <ExxyaProduct />
+      <section className="text-primary">
+        <div className="max-w-[900px] mx-auto p-4">
+          <h2 className="text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-16">
+            Our <span className="text-accent">Products</span>
+          </h2>
+          <AwexVideo />
+          <br />
+          <ExxyaProduct />
+        </div>
       </section>
+
       <ContainSection alt="white" data={AwexContent.About.CustomSolutions} />
-      <ContainSection alt="accent" data={AwexContent.About.DealerOpportunities} />
+      <ContainSection
+        alt="accent"
+        data={AwexContent.About.DealerOpportunities}
+      />
       <ContainSection data={AwexContent.About.OurMarketFocus} />
       <ContainSection alt="white" data={AwexContent.About.MeetOurTeam} />
     </Layout>
