@@ -7,9 +7,9 @@ const AwexMap = () => {
           width="100%"
           height="300px"
           style={{ border: 0 }}
-          allowfullscreen=""
+          allowFullScreen
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     );
