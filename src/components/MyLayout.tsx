@@ -12,21 +12,32 @@ const MyLayout = ({ children }: { children: any }) => {
 
   return (
     <main className="relative min-h-screen bg-gray-200 flex flex-col justify-between items-center max-w-full">
-      <div className={`hero-container bg-primary h-[50vh] md:h-screen ${videoLoaded ? 'loaded' : ''} w-full`}>
-        <video
-          src="/awex-video.mp4"
+      <div
+        className={`hero-container bg-primary h-[50vh] md:h-screen ${
+          videoLoaded ? 'loaded' : ''
+        } w-full`}
+      >
+        {/* <video
+          src="https://youtu.be/qIm-zdkD-i8?si=IHSIRKgNmEsGA3-S"
           autoPlay
           loop
           muted
           playsInline
           onLoadedData={handleVideoLoad}
           className="video-background"
-        ></video>
+        ></video> */}
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/qIm-zdkD-i8?si=OtlkwidOIgVZasf6&amp;autoplay=1&amp;controls=0&amp;loop=1"
+          allowFullScreen
+          className="video-background"
+        ></iframe>
 
         <div className="content">
-        <div className='absolute top-5 w-full p-0 mx-auto flex justify-center'>
-          <NavBar />
-        </div>
+          <div className="absolute top-5 w-full p-0 mx-auto flex justify-center">
+            <NavBar />
+          </div>
           {/* <nav className="navbar">
             <ul>
               <li>Home</li>
@@ -85,8 +96,6 @@ const MyLayout = ({ children }: { children: any }) => {
           position: absolute;
           top: 20px;
         }
-
-
 
         .navbar ul {
           list-style-type: none;
