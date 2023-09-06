@@ -16,8 +16,8 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <footer className="w-full bg-primary">
-      {/* <AwexMap /> */}
+    <footer className="w-full bg-primary text-white">
+      <AwexMap />
       <div className="p-5 awe-nav-links flex flex-col items-center py-10 min-h-60">
         <div className="sm:flex w-[90vw] justify-between items-center mb-10" style={{marginTop: "-5em"}}>
           <div className="flex justify-center items-center gap-x-3 bg-accent w-full p-5">
