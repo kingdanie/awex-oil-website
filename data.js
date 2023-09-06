@@ -4,6 +4,21 @@ const exxyaGearOilImage = '/exxya-gear-oil-image.jpg';
 const ProdImage = '/14.jpeg'
 
 const AwexContent = {
+  Homepage: {
+    awex: {
+      title: 'Discover Excellence in Every Drop!',
+      imgSrc: '/14.jpeg',
+      altText: 'Awex Technologies',
+      paragraphs: [
+        "At AWE.X Industries, we don't just talk about quality; we live it, breathe it, and deliver it with every drop of our EXxYA Oil.",
+        "Our promise, 'We Blend It, We Back It,' is more than just words – it's a commitment to excellence that runs deep in our veins.",
+      ],
+      CTA: {
+        text: "Learn More",
+        link: "/about-us"
+      }
+    },
+  },
   About: {
     Introduction: {
       paragraphs: [

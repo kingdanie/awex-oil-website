@@ -15,9 +15,9 @@ const AwexVideo = () => {
         className={`w-full ${isLoading ? 'hidden' : ''}`}
         src="https://www.youtube-nocookie.com/embed/KPNxYdUn_ro?si=DsBdvuaMVfAMMvJw"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
         onLoad={handleIframeLoad} // Call the function when the iframe loads
       ></iframe>
 
