@@ -1,6 +1,5 @@
 import AwexVideo from '@/components/AwexVideo';
 import ExxyaProduct from '@/components/ExxyaPoducts';
-import WhyExxya from '@/components/WhyExxya';
 import Layout from '@/components/layout';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,9 +12,7 @@ import {
   faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
 import SectionWithRightImg from '@/components/SectionWithRightImg';
-import SectionWithLeftImg from '@/components/SectionWithLeftImg';
 import AwexContent from '../../data';
-import { url } from 'inspector';
 import ContainSection from '@/components/containedSection';
 
 export default function About() {
@@ -44,14 +41,15 @@ export default function About() {
             We believe in <span className="text-accent">Reliably</span>{' '}
             providing our customers with{' '}
             <span className="text-accent">good performance</span> products at a
-            price level considered as 'Value for Money' . with today's
-            technology developing rapidly requiring engineering performing
-            lubricants, WE are committed to meet industry demands with a range
-            of products that is technology led. Giving our customers{' '}
-            <span className="text-accent">'Value for Money'</span> continues to
-            be our company's core value. This enables our customers to be more
-            competitive using the full set of benefits from our competitively
-            priced products
+            price level considered as &apos;Value for Money&apos; . with
+            today&apos;s technology developing rapidly requiring engineering
+            performing lubricants, We are committed to meet industry demands
+            with a range of products that is technology led. Giving our
+            customers{' '}
+            <span className="text-accent">&apos;Value for Money&apos;</span>{' '}
+            continues to be our company&apos;s core value. This enables our
+            customers to be more competitive using the full set of benefits from
+            our competitively priced products
           </p>
         </div>
       </section>
@@ -81,7 +79,7 @@ export default function About() {
               <span className="text-white font-semibold mr-2">
                 <FontAwesomeIcon icon={faCheckCircle} />
               </span>
-              To customise services to meet customers' needs
+              To customise services to meet customers&apos; needs
             </li>
             <li className="flex items-start">
               <span className="text-white font-semibold mr-2">

@@ -11,7 +11,7 @@ const AwexContent = {
       altText: 'Awex Technologies',
       paragraphs: [
         "At AWE.X Industries, we don't just talk about quality; we live it, breathe it, and deliver it with every drop of our EXxYA Oil.",
-        "Our promise, 'We Blend It, We Back It,' is more than just words – it's a commitment to excellence that runs deep in our veins.",
+        "Our promise, 'We Blend It, We Back It', is more than just words – it's a commitment to excellence that runs deep in our veins.",
       ],
       CTA: {
         text: "Learn More",
@@ -22,8 +22,8 @@ const AwexContent = {
   About: {
     Introduction: {
       paragraphs: [
-        " At AWE.X Industries, we believe in reliably providing our customers with high-performance products at a price that's considered 'Value for Money.' In a world where technology is rapidly advancing, our commitment is to meet industry demands with technology-led products.",
-        "Our core value is giving customers 'Value for Money,' enabling them to stay competitive with our competitively priced products.",
+        " At AWE.X Industries, we believe in reliably providing our customers with high-performance products at a price that's considered 'Value for Money'. In a world where technology is rapidly advancing, our commitment is to meet industry demands with technology-led products.",
+        "Our core value is giving customers 'Value for Money', enabling them to stay competitive with our competitively priced products.",
       ],
       title: 'Reliable Performance at Great Value',
       subTitle: 'Our Core Values',
