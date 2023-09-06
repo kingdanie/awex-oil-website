@@ -34,7 +34,8 @@ export default function Products() {
         </p>
         <AwexVideo />
       </section>
-      <section className="text-center bg-white">
+      <section className="text-center bg-white w-screen">
+        <div className="max-w-[900px] mx-auto">
         <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
           Product <span className="text-accent">Range</span>
         </h2>
@@ -51,6 +52,7 @@ export default function Products() {
         </p>
         <div className="relative mt-10 max-w-[900px] mx-auto">
           <ExxyaProduct />
+        </div>
         </div>
       </section>
     </Layout>
