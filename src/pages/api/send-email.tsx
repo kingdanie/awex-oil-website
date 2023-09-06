@@ -11,7 +11,7 @@ export default async function handler(
 
   const { name, email, msg } = req.body;
 
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const mailData = {
     to: `${email}`,
