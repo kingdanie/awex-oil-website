@@ -44,6 +44,7 @@ const NavBar = () => {
                   {navLinks.map((navLink, index) => (
                     <Link
                       href={navLink.href}
+                      key={index}
                       className={`inline-flex items-center uppercase border-b-2 px-5 pt-1 text-sm font-bold ${
                         router.pathname === navLink.href
                           ? 'border-orange-500 bg-orange-50 text-primary'
