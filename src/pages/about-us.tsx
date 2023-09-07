@@ -33,7 +33,7 @@ export default function About() {
         >
           {' '}
         </div>
-        <div className="md:w-1/2 p-20">
+        <div className="md:w-1/2 py-20 px-12 md:p-20">
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold text-center mb-10">
             Values & <span className="text-accent">Philosophy</span>
           </h2>
@@ -93,7 +93,7 @@ export default function About() {
       </section>
 
       <section className="section-img zero-margin bg-white flex flex-col md:flex-row justify-center">
-        <div className="md:w-1/2 p-20">
+        <div className="md:w-1/2 py-20 px-12 md:p-20">
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold mb-10">
             Company Philosophy
             <span className="text-accent"> & Strengths</span>
@@ -160,7 +160,7 @@ export default function About() {
       </section>
       <section className="text-primary">
         <div className="max-w-[900px] mx-auto p-4">
-          <h2 className="text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-16">
+          <h2 className="mx-auto text-2xl md:text-4xl text-primary font-extrabold sm:w-[60vw] text-center mb-16">
             Our <span className="text-accent">Products</span>
           </h2>
           <AwexVideo />
