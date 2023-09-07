@@ -13,9 +13,13 @@ const MyLayout = ({ children }: { children: any }) => {
   return (
     <main className="relative min-h-screen bg-gray-200 flex flex-col justify-between items-center max-w-full">
       <div
-        className={`hero-container bg-primary h-[50vh] md:h-screen ${
+        className={`hero-container hidden md:block bg-primary h-[50vh] md:h-screen ${
           videoLoaded ? 'loaded' : ''
         } w-full`}
+        style={{
+          backgroundImage: "url('/awex-bg.jpg')",
+          backgroundSize: 'cover',
+        }}
       >
         {/* <video
           src="https://youtu.be/qIm-zdkD-i8?si=IHSIRKgNmEsGA3-S"
@@ -26,16 +30,23 @@ const MyLayout = ({ children }: { children: any }) => {
           onLoadedData={handleVideoLoad}
           className="video-background"
         ></video> */}
-        <iframe
+        {/* <iframe
           width="560"
           height="315"
           src="https://www.youtube.com/embed/qIm-zdkD-i8?si=OtlkwidOIgVZasf6&amp;autoplay=1&amp;controls=0&amp;loop=1"
           allowFullScreen
           className="video-background"
-        ></iframe>
+        ></iframe> */}
+        {/* <iframe
+          width="560"
+          height="315"
+          src="https://player.vimeo.com/video/861797636?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          allow="autoplay"
+          className="video-background"
+        ></iframe> */}
 
         <div className="content">
-          <div className="absolute top-5 w-full p-0 mx-auto flex justify-center">
+          <div className="absolute top-0 md:top-5 w-full p-0 mx-auto flex justify-center">
             <NavBar />
           </div>
           {/* <nav className="navbar">
@@ -47,12 +58,26 @@ const MyLayout = ({ children }: { children: any }) => {
             </ul>
           </nav> */}
 
-          <div className="welcome-text">
+          <div className="hidden welcome-text">
             <h1>Welcome to Awe X Industries Limited</h1>
             <p>authorized dealer of Exxya OIl.</p>
             <button className="learn-more-button">Learn More</button>
           </div>
         </div>
+      </div>
+
+      <div className='relative md:hidden min-h-[55px] z-10 w-full'>
+        <NavBar />
+      </div>
+      <div
+        className="bg-primary min-h-[30vh] md:hidden w-full relative"
+        style={{
+          backgroundImage: "url('/awex-bg.jpg')",
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+        }}
+      >
       </div>
       <section className="p-0 min-h-[40vh]">{children}</section>
       <Footer />
@@ -61,7 +86,7 @@ const MyLayout = ({ children }: { children: any }) => {
         .hero-container {
           position: relative;
           width: 100%;
-          max-height: 700px;
+          max-height: 630px;
           overflow: hidden;
         }
 
