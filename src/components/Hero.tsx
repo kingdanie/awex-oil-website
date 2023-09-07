@@ -26,7 +26,7 @@ const Hero = ({ title = '' }: { title?: string }) => {
       }}
     >
       <h1
-        className="text-bold text-4xl md:text-6xl"
+        className="font-bold leading-none text-4xl md:text-6xl"
         style={{ padding: '5rem', background: '#000000b0' }}
         onClick={() => console.log(router.pathname)}
       >
