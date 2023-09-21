@@ -1,22 +1,34 @@
 const exxyaOilImage = '/exxya-engine-oil.jpg'; // Replace with your image path
 const exxyaCoolantImage = '/exxya-coolant-image.jpg'; // Replace with your image path
 const exxyaGearOilImage = '/exxya-gear-oil-image.jpg';
-const ProdImage = '/14.jpeg'
+const ProdImage = '/14.jpeg';
 
 const AwexContent = {
   Homepage: {
     awex: {
       title: 'Discover Excellence in Every Drop!',
-      imgSrc: '/14.jpeg',
+      imgSrc: '/14.jpg',
+      altText: 'Awex Technologies',
+      paragraphs: [''],
+      CTA: {
+        text: 'Learn More',
+        link: '/about-us',
+      },
+    },
+  },
+  HomepageBackup: {
+    awex: {
+      title: 'Discover Excellence in Every Drop!',
+      imgSrc: '/14.jpg',
       altText: 'Awex Technologies',
       paragraphs: [
         "At AWE.X Industries, we don't just talk about quality; we live it, breathe it, and deliver it with every drop of our EXxYA Oil.",
         "Our promise, 'We Blend It, We Back It', is more than just words – it's a commitment to excellence that runs deep in our veins.",
       ],
       CTA: {
-        text: "Learn More",
-        link: "/about-us"
-      }
+        text: 'Learn More',
+        link: '/about-us',
+      },
     },
   },
   About: {
@@ -27,7 +39,7 @@ const AwexContent = {
       ],
       title: 'Reliable Performance at Great Value',
       subTitle: 'Our Core Values',
-      imgSrc: '/14.jpeg',
+      imgSrc: '/14.jpg',
       altText: 'Awex Technologies',
     },
 

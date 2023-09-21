@@ -41,7 +41,7 @@ export default function SectionWithRightImg({
           </div>
           {data.CTA && (
             <Link
-              className="bg-accent p-5 text-white font-bold hover:font-extrabold"
+              className="bg-accent p-5 text-white font-bold hover:font-extrabold mt-10"
               href={`${data.CTA.link}`}
             >
               {data.CTA.text}

@@ -85,7 +85,7 @@ export default function About() {
               <span className="text-white font-semibold mr-2">
                 <FontAwesomeIcon icon={faCheckCircle} />
               </span>
-              To lead the organisation with a competent and responsive
+              To lead an organization with a competent and responsive
               management team
             </li>
           </ul>
