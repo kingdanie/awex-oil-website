@@ -1,4 +1,4 @@
-const exxyaOilImage = '/exxya-engine-oil.jpg'; // Replace with your image path
+const exxyaOilImage = '/exxya-synth-oil.png'; // Replace with your image path
 const exxyaCoolantImage = '/exxya-coolant-image.jpg'; // Replace with your image path
 const exxyaGearOilImage = '/exxya-gear-oil-image.jpg';
 const ProdImage = '/14.jpeg';

@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
 
         <div className="text-center pt-[70px]">
           <Link
-            className="p-5 bg-accent hover:bg-orange-700 text-xl font-bold text-white"
+            className="p-5 bg-primary hover:bg-orange-700 text-xl font-bold text-white"
             href="https://wa.me/+2348025726493?text=Hello,%20I%20will%20I%20like%20to%20place%20an%20order%20for%20Exxya%20Oil%20Thanks"
           >
             Place Your Order

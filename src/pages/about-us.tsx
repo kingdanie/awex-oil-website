@@ -165,7 +165,7 @@ export default function About() {
           </h2>
           <AwexVideo />
           <br />
-          <ExxyaProduct />
+          {/* <ExxyaProduct /> */}
         </div>
       </section>
 

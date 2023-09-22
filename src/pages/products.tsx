@@ -1,8 +1,8 @@
-import ExxyaProduct from '@/components/ExxyaPoducts';
+import AwexVideo from '@/components/AwexVideo';
 import Layout from '@/components/layout';
 import Image from 'next/image';
-import EXxyaProdImage from '@/components/ExxyaProdImage';
-import AwexVideo from '@/components/AwexVideo';
+import Link from 'next/link';
+const ExxyaOil = '/exxya-synth-oil.png';
 
 export default function Products() {
   return (
@@ -36,23 +36,37 @@ export default function Products() {
       </section>
       <section className="text-center bg-white w-screen">
         <div className="max-w-[900px] mx-auto">
-        <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
-          Product <span className="text-accent">Range</span>
-        </h2>
-        <p className="text-black max-w-[900px] mx-auto">
-          AWE.X Industries lubricants product range is designed to meet
-          requirements of various markets and applications, ranging from
-          Industrial, automotive, Construction, and Marine.
-        </p>
-        <p className="text-black max-w-[900px] mx-auto">
-          We offer a dynamic range of engine oils, gear oils, brake fluids,
-          coolants, and greases for motorbikes, cars, trucks, and other
-          heavy-duty vehicles. The product mix is constantly reviewed to ensure
-          that the specifications are of the latest standards.
-        </p>
-        <div className="relative mt-10 max-w-[900px] mx-auto">
-          <ExxyaProduct />
-        </div>
+          <h2 className="text-4xl text-primary font-extrabold text-center mb-10">
+            Product <span className="text-accent">Range</span>
+          </h2>
+          <p className="text-black max-w-[900px] mx-auto">
+            AWE.X Industries lubricants product range is designed to meet
+            requirements of various markets and applications, ranging from
+            Industrial, automotive, Construction, and Marine.
+          </p>
+          <p className="text-black max-w-[900px] mx-auto">
+            We offer a dynamic range of engine oils, gear oils, brake fluids,
+            coolants, and greases for motorbikes, cars, trucks, and other
+            heavy-duty vehicles. The product mix is constantly reviewed to
+            ensure that the specifications are of the latest standards.
+          </p>
+          <div className="relative mt-10 max-w-[900px] mx-auto">
+            {/* <ExxyaProduct /> */}
+            {/* <img src="./exxya-synth-oil.png" className="max-h-[500px]" /> */}
+            <Image
+              src={ExxyaOil}
+              alt="Exxya Sythetic Engine Oil"
+              width={1200}
+              height={500}
+            />
+          </div>
+          <div className="p-[30px]"></div>
+          <Link
+            className="p-5 bg-accent font-bold text-white center"
+            href="/exxya-fully-synthetic-engine-oil"
+          >
+            Learn More About Exxya Oil
+          </Link>
         </div>
       </section>
     </Layout>

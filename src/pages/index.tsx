@@ -1,38 +1,54 @@
-import MyLayout from "@/components/MyLayout";
-import ContainedSection from "@/components/containedSection";
-import AwexContent from "../../data";
-import SectionWithRightImg from "@/components/SectionWithRightImg";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import ExxyaProduct from "@/components/ExxyaPoducts";
-import Link from "next/link";
+import MyLayout from '@/components/MyLayout';
+import SectionWithRightImg from '@/components/SectionWithRightImg';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import Image from 'next/image';
+import Link from 'next/link';
+import AwexContent from '../../data';
+const ExxyaOil = '/exxya-synth-oil.png';
 
 export default function Home() {
   return (
     <MyLayout>
       <SectionWithRightImg data={AwexContent.Homepage.awex} />
       <WhyChooseUs />
-      <section className="text-center bg-primary">
+      <section
+        className="text-center bg-white"
+        style={{
+          backgroundImage: "url('/section-bg.jpg')",
+        }}
+      >
         <div className="mx-auto ">
-          <h2 className="text-4xl text-white font-extrabold text-center mb-10">
+          <h2 className="text-4xl font-extrabold text-center mb-10">
             Our <span className="text-accent">Product</span> Range
           </h2>
-          <p className="text-white max-w-[900px] mx-auto">
+          <p className=" max-w-[900px] mx-auto">
             We offer a dynamic range of engine oils, gear oils, brake fluids,
             coolants, and greases for motorbikes, cars, trucks, and other
             heavy-duty vehicles. The product mix is constantly reviewed to
             ensure that the specifications are of the latest standards.
           </p>
-          <div className="relative mt-10 max-w-[900px] mx-auto">
+          {/* <div className="">
             <ExxyaProduct />
+          </div> */}
+          <div className="relative mt-10 max-w-[900px] mx-auto">
+            {/* <img src="./exxya-synth-oil.png" className="max-h-[500px]" /> */}
+            <Image
+              src={ExxyaOil}
+              alt="Exxya Sythetic Engine Oil"
+              width={1200}
+              height={500}
+            />
           </div>
+          <div className="p-[40px]"></div>
+          <Link
+            className="p-5 bg-accent font-bold text-white center hover:ring-1 hover:ring-accent"
+            href="/products"
+          >
+            Learn More About Our Products
+          </Link>
         </div>
       </section>
-      <section
-        style={{
-          backgroundImage: "url('/section-bg.jpg')",
-        }}
-        className="bg-white zero-margin flex flex-col-reverse sm:flex-row justify-center"
-      >
+      <section className=" zero-margin flex flex-col-reverse sm:flex-row justify-center">
         <div
           className="md:w-1/2 bg-primary"
           style={{
