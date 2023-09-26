@@ -17,6 +17,7 @@ const config: Config = {
         primary: '#0a070e',
         accent: '#aa3219',
         'awex-grey': '#8d888e',
+        'awex-deep': 'rgb(26 26 26)',
         'primary-light': '#aa3219de',
       },
     },
