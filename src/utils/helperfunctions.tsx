@@ -8,6 +8,7 @@ export const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about-us' },
   { name: 'Our Products', href: '/products' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Services', href: '/services' },
   { name: 'Contact Us', href: '/contact-us' },
   { name: 'Get Quote', href: 'tel:+2348025726493' },
