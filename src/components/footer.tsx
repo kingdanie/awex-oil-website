@@ -4,6 +4,7 @@ import {
   faFacebook,
   faInstagram,
   faLinkedin,
+  faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navLinks } from '@/utils/helperfunctions';
@@ -16,10 +17,13 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <footer className="w-full bg-primary text-white">
+    <footer className="w-full bg-awex-deep text-white">
       <AwexMap />
       <div className="p-5 awe-nav-links flex flex-col items-center py-10 min-h-60">
-        <div className="sm:flex w-[90vw] justify-between items-center mb-10" style={{marginTop: "-5em"}}>
+        <div
+          className="sm:flex w-[90vw] justify-between items-center mb-10"
+          style={{ marginTop: '-5em' }}
+        >
           <div className="flex justify-center items-center gap-x-3 bg-accent w-full p-5">
             <MapIcon className="block h-12 w-12" aria-hidden="true" />
             <Link href="">3 Clegg Lane Ojuelegba – Surulere</Link>
@@ -51,7 +55,7 @@ const Footer = () => {
                 <a
                   key={navLink.name} // Add a unique key
                   href={navLink.href}
-                  className={`inline-flex items-center hover:text-accent px-1 pt-1 text-sm font-medium text-gray-900 ${
+                  className={`inline-flex items-center hover:text-accent px-1 pt-1 text-sm font-medium  ${
                     router.pathname === navLink.href
                       ? 'text-accent'
                       : 'text-white'
@@ -80,16 +84,16 @@ const Footer = () => {
               <FontAwesomeIcon icon={faLinkedin} size="2xl" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://linkedin.com/in/exxya-oil-7a2630247"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faInstagram} size="2xl" />
+              <FontAwesomeIcon icon={faLinkedinIn} size="2xl" />
             </a>
           </div>
         </div>
       </div>
-      <div className="text-center bg-primary mt-10 p-5 border-t-2 border-accent">
+      <div className="text-center bg-awex-deep mt-10 p-5 border-t-2 border-accent">
         © {new Date().getFullYear()} Awex Oil Limited. All Rights Reserved.
       </div>
     </footer>
