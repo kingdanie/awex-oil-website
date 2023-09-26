@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import useKeypress from 'react-use-keypress'
+// import useKeypress from 'react-use-keypress';
 import type { ImageProps } from '../utils/types'
 import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 import SharedModal from './SharedModal'
@@ -15,21 +15,28 @@ export default function Carousel({
   currentPhoto: ImageProps
   path: string
 }) {
-  const router = useRouter()
-  const [, setLastViewedPhoto] = useLastViewedPhoto()
+  const router = useRouter();
+  const [, setLastViewedPhoto] = useLastViewedPhoto();
 
   function closeModal() {
-    setLastViewedPhoto(currentPhoto.id)
-    router.push('/gallery', undefined, { shallow: true })
+    setLastViewedPhoto(currentPhoto.id);
+    router.push('/gallery', undefined, { shallow: true });
   }
 
   function changePhotoId(newVal: number) {
-    return newVal
+    return newVal;
   }
 
-  useKeypress('Escape', () => {
-    closeModal()
-  })
+  // useKeypress('Escape', () => {
+  //   closeModal();
+  // });
+
+  // Use a native JavaScript function to implement the escape key functionality
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
 
   return (
     <div className="fixed inset-0 flex items-center justify-center">
