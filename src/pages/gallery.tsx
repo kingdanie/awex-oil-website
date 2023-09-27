@@ -15,13 +15,13 @@ const Gallery: NextPage = () => {
 
      const router = useRouter();
     //  const { photoId } = router.query;
-    const [photoId, setPhotoId] = useState(null)
+    const [photoId, setPhotoId] = useState<null | string>(null)
      const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
 
      const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-     const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null);
+     const lastViewedPhotoRef = useRef<HTMLDivElement>(null);
 
        const openModal = (photoId: string) => {
          setPhotoId(photoId);
@@ -58,7 +58,6 @@ const Gallery: NextPage = () => {
               <div
                 key={id}
                 ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
-                shallow="true"
                 className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
               >
                 <Image
