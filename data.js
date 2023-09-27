@@ -110,7 +110,7 @@ const AwexContent = {
   },
 
   ExxyaDescription: {
-    imgSrc: '/builder-batter-left.jpg',
+    imgSrc: '/exxya-synth-oil.png',
     altText: 'exxya engine oil',
     subTitle: 'Ultra Superiour Quality',
     title: 'Designed for Modern Vehicles',
