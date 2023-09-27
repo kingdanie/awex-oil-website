@@ -14,7 +14,7 @@ export default function Modal({
   index: number;
   onClose?: () => void;
 }) {
-  let overlayRef = useRef();
+  let overlayRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -27,7 +27,7 @@ export default function Modal({
   function handleClose() {
     setIsOpen(false);
     router.push('/gallery', undefined, { shallow: true });
-    onClose();
+    onClose?.();
   }
 
   function changePhotoId(newVal: number) {

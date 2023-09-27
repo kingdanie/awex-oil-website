@@ -1,25 +1,26 @@
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 // import useKeypress from 'react-use-keypress';
-import type { ImageProps } from '../utils/types'
-import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
-import SharedModal from './SharedModal'
-import { dataSource } from '../../dataSource'
+import { dataSource } from '../../dataSource';
+import type { ImageProps } from '../utils/types';
+import { useLastViewedPhoto } from '../utils/useLastViewedPhoto';
+import SharedModal from './SharedModal';
+import { useEffect } from 'react';
 
 export default function Carousel({
   index,
   currentPhoto,
   path,
 }: {
-  index: number
-  currentPhoto: ImageProps
-  path: string
+  index: number;
+  currentPhoto: ImageProps;
+  path: string;
 }) {
   const router = useRouter();
-  const [, setLastViewedPhoto] = useLastViewedPhoto();
+  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
 
   function closeModal() {
-    setLastViewedPhoto(currentPhoto.id);
+    setLastViewedPhoto(currentPhoto?.id);
     router.push('/gallery', undefined, { shallow: true });
   }
 
@@ -31,12 +32,23 @@ export default function Carousel({
   //   closeModal();
   // });
 
-  // Use a native JavaScript function to implement the escape key functionality
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeModal();
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    // Add event listener only when window is available (in the browser)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', handleKeyDown);
+
+      // Remove the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     }
-  });
+  }, []);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center">
